@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{78D8CBA9-A8E4-45E2-AE3F-6CF29CC87530}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AccountBalanceAPI/Model/AccountBalance.cs">
+    <Files>
+      <File FileName="AccountBalanceAPI/Controllers/ValuesController.cs" Line="48" Column="14" />
+      <File FileName="AccountBalanceAPI/DBConnection/DBConnection.cs" Line="17" Column="33" />
+      <File FileName="AccountBalanceAPI/AppSettings/ConstantStrings.cs" Line="12" Column="194" />
+      <File FileName="AccountBalanceAPI/Model/AccountBalance.cs" Line="7" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.AccountBalanceAPI PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
