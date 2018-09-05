@@ -4,16 +4,9 @@
     {{ title }}
   </h1>
 </div>
-<h2>Actions to perform: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Upload Account Balance</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">View Statement</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">View Period Statement</a></h2>
-  </li>
-</ul>
-
+<nav>
+  <a routerLink="/upload" routerLinkActive="active">Upload Balance</a>
+  <a routerLink="/statement" routerLinkActive="active">View Statement</a>
+  <a routerLink="/allitems" routerLinkActive="active">Show Balance Changes</a>
+</nav>
+<router-outlet></router-outlet>
