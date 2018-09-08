@@ -5,14 +5,17 @@ app.controller('ViewGraphController', function ($scope, $http) {
     ];
 
     $scope.generateGraph = function () {
-        $http(
-            {
-                method: 'GET',
-                url: 'https://accountbalance.azurewebsites.net/api/values/' + formatDate($scope.startDate) + '/' + formatDate($scope.endDate),
-            }).then(function successCallback(response) {
-                DrawChart(response);
-            }, function errorCallback(response) {
-            });
+        if ($scope.startDate === undefined || $scope.startDate == null || $scope.endDate === undefined || $scope.endDate == null)
+            alert("Date selection is required!");
+        else
+            $http(
+                {
+                    method: 'GET',
+                    url: 'https://accountbalance.azurewebsites.net/api/values/' + formatDate($scope.startDate) + '/' + formatDate($scope.endDate),
+                }).then(function successCallback(response) {
+                    DrawChart(response);
+                }, function errorCallback(response) {
+                });
     };
 
     function formatDate(date) {

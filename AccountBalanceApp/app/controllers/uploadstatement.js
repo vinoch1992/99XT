@@ -46,8 +46,10 @@ app.controller('ViewUploadController', function ($scope, $http) {
                                 data: result[0],
                             }).then(function successCallback(response) {
                                 alert("Upload Success!");
+                                location.reload();
                             }, function errorCallback(response) {
                                 alert("Something went wrong. please try again!");
+                                location.reload();
                             });
                     }
                 });
