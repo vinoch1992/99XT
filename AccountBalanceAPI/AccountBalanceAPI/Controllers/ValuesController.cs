@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using AccountBalanceAPI.DBConnection;
 using AccountBalanceAPI.Model;
 using Microsoft.AspNetCore.Mvc;
@@ -39,15 +38,22 @@ namespace AccountBalanceAPI.Controllers
             using (var db = new AccountBalanceContext())
             {
                 accountBalance = db.AccountBalance.Where(a => a.BalanceDate >= startDate & a.BalanceDate <= endDate).ToList();
+                accountBalance.Sort();
             }
 
             return accountBalance;
         }
 
-        //// POST api/values
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
+        // POST api/values
+        [HttpPost]
+        public void Post(AccountBalance accountBalance)
+        {
+            using (var db = new AccountBalanceContext())
+            {
+                accountBalance.BalanceDate = DateTime.Now;
+                db.AccountBalance.Add(accountBalance);
+                db.SaveChanges();
+            }
+        }
     }
 }

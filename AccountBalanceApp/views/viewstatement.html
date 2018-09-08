@@ -12,16 +12,35 @@
 
 <body>
     <div class="navbar">
-        <a href="#home">Upload Statement</a>
+        <a href="uploadstatement.html">Upload Statement</a>
         <a href="viewstatement.html" style="background-color:red">View Statement</a>
-        <a href="#news">View Items</a>
+        <a href="viewgraph.html">View Graph</a>
     </div>
     <div ng-controller="ViewStatementController">
-
-        First Name: <input type="text" ng-model="firstName"><br>
-        Last Name: <input type="text" ng-model="lastName"><br>
-        <br>
-        Full Name: {{firstName + " " + lastName}}
-
+        <br />
+        <h2>Balance as of {{statement.balanceDate}}</h2>
+        <br />
+        <div class="table100 ver1 m-b-110">
+            <table data-vertable="ver1">
+                <thead>
+                    <tr class="row100 head">
+                        <th class="column100 column2" data-column="column2">R&D</th>
+                        <th class="column100 column3" data-column="column3">Canteen</th>
+                        <th class="column100 column4" data-column="column4">CEO's Car</th>
+                        <th class="column100 column5" data-column="column5">Marketing</th>
+                        <th class="column100 column6" data-column="column6">Parking fines</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row100">
+                        <td class="column100 column2" data-column="column2">Rs. {{statement.balanceRAD}}</td>
+                        <td class="column100 column3" data-column="column3">Rs. {{statement.balanceCanteen}}</td>
+                        <td class="column100 column4" data-column="column4">Rs. {{statement.balanceCEOCar}}</td>
+                        <td class="column100 column5" data-column="column5">Rs. {{statement.balanceMarketing}}</td>
+                        <td class="column100 column6" data-column="column6">Rs. {{statement.balanceParkingFines}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
