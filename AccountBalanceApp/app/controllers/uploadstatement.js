@@ -41,8 +41,9 @@ app.controller('ViewUploadController', function ($scope, $http) {
                         //Post the account balance
                         $http(
                             {
-                                method: 'GET',
-                                url: 'https://accountbalance.azurewebsites.net/api/values/' + formatDate($scope.startDate) + '/' + formatDate($scope.endDate),
+                                method: 'POST',
+                                url: 'https://accountbalance.azurewebsites.net/api/values/',
+                                data: result[0],
                             }).then(function successCallback(response) {
                                 alert("Upload Success!");
                             }, function errorCallback(response) {

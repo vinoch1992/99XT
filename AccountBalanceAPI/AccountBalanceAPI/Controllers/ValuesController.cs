@@ -38,7 +38,6 @@ namespace AccountBalanceAPI.Controllers
             using (var db = new AccountBalanceContext())
             {
                 accountBalance = db.AccountBalance.Where(a => a.BalanceDate >= startDate & a.BalanceDate <= endDate).ToList();
-                accountBalance.Sort();
             }
 
             return accountBalance;
@@ -46,7 +45,7 @@ namespace AccountBalanceAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post(AccountBalance accountBalance)
+        public void UploadBalance(AccountBalance accountBalance)
         {
             using (var db = new AccountBalanceContext())
             {
