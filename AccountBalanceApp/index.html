@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="accountbalance">
+
+<title>Account Balance</title>
+
+<head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+</head>
+
+<body ng-controller="uploadController">
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Account Balance</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#uploadstatement"><i class="fa fa-upload"></i> Upload Statement</a></li>
+                <li><a href="#viewstatement"><i class="fa fa-file-invoice-dollar"></i> View Statement</a></li>
+                <li><a href="#viewgraph"><i class="fa fa-chart-line"></i> View Graph</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="main">
+        <div ng-view></div>
+    </div>
+</body>
+
+</html>

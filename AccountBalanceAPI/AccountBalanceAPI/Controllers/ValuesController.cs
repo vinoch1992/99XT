@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AccountBalanceAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
@@ -52,6 +52,19 @@ namespace AccountBalanceAPI.Controllers
                 accountBalance.BalanceDate = DateTime.Now;
                 db.AccountBalance.Add(accountBalance);
                 db.SaveChanges();
+            }
+        }
+
+        // POST api/values
+        [HttpPost]
+        public Users ValidateUser(Users user)
+        {
+            using (var db = new AccountBalanceContext())
+            {
+                Users user_actual = db.Users.FirstOrDefault(u => u.Username == user.Username & u.Password == user.Password);
+                if (user_actual != null)
+                    user_actual.Password = string.Empty;
+                return user_actual;
             }
         }
     }

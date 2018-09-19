@@ -8,6 +8,8 @@ namespace AccountBalanceAPI.DBConnection
     {
         public DbSet<AccountBalance> AccountBalance { get; set; }
 
+        public DbSet<Users> Users { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(ConstantStrings.DBCONNECTIONURL);

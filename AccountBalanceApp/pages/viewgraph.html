@@ -1,0 +1,13 @@
+<div class="jumbotron text-center">
+	<h3>View Graph</h3>
+
+	<br />
+	<h3>Select Start Date</h3>
+	<input type="date" ng-model="startDate">
+	<br />
+	<h3>Select End Date</h3>
+	<input type="date" ng-model="endDate">
+	<br />
+	<button class="button" ng-click="generateGraph()">Generate Graph</button>
+	<div id="curve_chart" style="width: 900px; height: 500px"></div>
+</div>

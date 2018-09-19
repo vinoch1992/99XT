@@ -1,5 +1,11 @@
 ﻿<Properties StartupConfiguration="{78D8CBA9-A8E4-45E2-AE3F-6CF29CC87530}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AccountBalanceAPI/Controllers/ValuesController.cs">
+    <Files>
+      <File FileName="AccountBalanceAPI/Model/Users.cs" Line="10" Column="45" />
+      <File FileName="AccountBalanceAPI/Controllers/ValuesController.cs" Line="55" Column="14" />
+      <File FileName="AccountBalanceAPI/AppSettings/ConstantStrings.cs" Line="8" Column="194" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
