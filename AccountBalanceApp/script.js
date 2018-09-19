@@ -1,23 +1,60 @@
 var accountBalance = angular.module('accountbalance', ['ngRoute']);
 
+accountBalance.run(function ($rootScope, $location) {
+    if ($rootScope.username == "" || $rootScope.username == undefined) {
+        $location.path('/');
+    }
+})
+
 accountBalance.config(function ($routeProvider) {
     $routeProvider
 
+        .when('/', {
+            templateUrl: 'pages/login.html',
+            controller: 'loginController',
+            resolve: {
+                factory: checkPrivilege
+            }
+        })
+
         .when('/uploadstatement', {
             templateUrl: 'pages/uploadstatement.html',
-            controller: 'uploadController'
+            controller: 'uploadController',
+            resolve: {
+                factory: checkAdminPrivilege
+            }
         })
 
         .when('/viewstatement', {
             templateUrl: 'pages/viewstatement.html',
-            controller: 'viewController'
+            controller: 'viewController',
+            resolve: {
+                factory: checkPrivilege
+            }
         })
 
         .when('/viewgraph', {
             templateUrl: 'pages/viewgraph.html',
-            controller: 'graphController'
+            controller: 'graphController',
+            resolve: {
+                factory: checkAdminPrivilege
+            }
         });
 });
+
+var checkAdminPrivilege = function ($rootScope, $location) {
+    if ($rootScope.username != "" && $rootScope.username != undefined && $rootScope.role == "ADMIN")
+        return true;
+    else
+        $location.path('/');
+};
+
+var checkPrivilege = function ($rootScope, $location) {
+    if ($rootScope.username != "" && $rootScope.username != undefined && ($rootScope.role == "ADMIN" || $rootScope.role == "USER"))
+        return true;
+    else
+        $location.path('/');
+};
 
 accountBalance.directive('customOnChange', function () {
     return {
@@ -29,7 +66,11 @@ accountBalance.directive('customOnChange', function () {
     };
 });
 
-accountBalance.controller('uploadController', function ($scope, $http) {
+accountBalance.controller('uploadController', function ($scope, $http, $rootScope) {
+    if ($rootScope.username != undefined || $rootScope.username == "") {
+        this.route
+    }
+
     $scope.uploadFile = function () {
         var oFile = event.target.files;
         var files = oFile;
@@ -60,7 +101,7 @@ accountBalance.controller('uploadController', function ($scope, $http) {
                         $http(
                             {
                                 method: 'POST',
-                                url: 'https://accountbalance.azurewebsites.net/api/values/',
+                                url: 'https://accountbalance.azurewebsites.net/api/values/uploadbalance',
                                 data: result[0],
                             }).then(function successCallback(response) {
                                 alert("Upload Success!");
@@ -85,7 +126,7 @@ accountBalance.controller('viewController', function ($scope, $http) {
     $http(
         {
             method: 'GET',
-            url: 'https://accountbalance.azurewebsites.net/api/values/',
+            url: 'https://accountbalance.azurewebsites.net/api/values/getcurrentbalance',
         }).then(function successCallback(response) {
             $scope.statement = response.data;
             $scope.statement.balanceDate = monthNames[new Date().getUTCMonth()] + " " + new Date().getUTCFullYear();
@@ -106,7 +147,7 @@ accountBalance.controller('graphController', function ($scope, $http) {
             $http(
                 {
                     method: 'GET',
-                    url: 'https://accountbalance.azurewebsites.net/api/values/' + formatDate($scope.startDate) + '/' + formatDate($scope.endDate),
+                    url: 'https://accountbalance.azurewebsites.net/api/values/getbalanceperiodwise/' + formatDate($scope.startDate) + '/' + formatDate($scope.endDate),
                 }).then(function successCallback(response) {
                     DrawChart(response);
                 }, function errorCallback(response) {
@@ -161,4 +202,32 @@ accountBalance.controller('graphController', function ($scope, $http) {
             chart.draw(data, options);
         }
     }
+});
+
+accountBalance.controller('loginController', function ($scope, $http, $rootScope, $location) {
+    $rootScope.globals = {};
+
+    $scope.login = function () {
+        if ($scope.username === undefined || $scope.username == null || $scope.password === undefined || $scope.password == null)
+            alert("Username or password is empty!");
+        else {
+            var user = { Username: $scope.username, Password: $scope.password };
+            $http(
+                {
+                    method: 'POST',
+                    url: 'https://accountbalance.azurewebsites.net/api/values/validateuser',
+                    data: user,
+                }).then(function successCallback(response) {
+                    if (response.data == null || response.data == "")
+                        alert("Wrong username or password!");
+                    else {
+                        $rootScope.username = response.data.username;
+                        $rootScope.role = response.data.role;
+                        $location.path('/viewstatement');
+                    }
+                }, function errorCallback(response) {
+                    alert("fail");
+                });
+        }
+    };
 });
