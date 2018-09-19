@@ -1,0 +1,15 @@
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\bin\Release\netcoreapp2.1\AccountBalanceAPI.deps.json
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\bin\Release\netcoreapp2.1\AccountBalanceAPI.runtimeconfig.json
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\bin\Release\netcoreapp2.1\AccountBalanceAPI.runtimeconfig.dev.json
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\bin\Release\netcoreapp2.1\AccountBalanceAPI.dll
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\bin\Release\netcoreapp2.1\AccountBalanceAPI.pdb
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\obj\Release\netcoreapp2.1\AccountBalanceAPI.csprojAssemblyReference.cache
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\obj\Release\netcoreapp2.1\AccountBalanceAPI.csproj.CoreCompileInputs.cache
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\obj\Release\netcoreapp2.1\AccountBalanceAPI.RazorAssemblyInfo.cache
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\obj\Release\netcoreapp2.1\AccountBalanceAPI.RazorAssemblyInfo.cs
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\obj\Release\netcoreapp2.1\AccountBalanceAPI.AssemblyInfoInputs.cache
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\obj\Release\netcoreapp2.1\AccountBalanceAPI.AssemblyInfo.cs
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\obj\Release\netcoreapp2.1\AccountBalanceAPI.RazorTargetAssemblyInfo.cache
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\obj\Release\netcoreapp2.1\AccountBalanceAPI.dll
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\obj\Release\netcoreapp2.1\AccountBalanceAPI.pdb
+C:\Users\vinoch\Downloads\99XT\AccountBalanceAPI\AccountBalanceAPI\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs

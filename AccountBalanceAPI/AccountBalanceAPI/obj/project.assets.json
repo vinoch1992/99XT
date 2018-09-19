@@ -11501,28 +11501,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/vinoch/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\vinoch\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/vinoch/Documents/99XT/AccountBalanceAPI/AccountBalanceAPI/AccountBalanceAPI.csproj",
+      "projectUniqueName": "C:\\Users\\vinoch\\Downloads\\99XT\\AccountBalanceAPI\\AccountBalanceAPI\\AccountBalanceAPI.csproj",
       "projectName": "AccountBalanceAPI",
-      "projectPath": "/Users/vinoch/Documents/99XT/AccountBalanceAPI/AccountBalanceAPI/AccountBalanceAPI.csproj",
-      "packagesPath": "/Users/vinoch/.nuget/packages/",
-      "outputPath": "/Users/vinoch/Documents/99XT/AccountBalanceAPI/AccountBalanceAPI/obj",
+      "projectPath": "C:\\Users\\vinoch\\Downloads\\99XT\\AccountBalanceAPI\\AccountBalanceAPI\\AccountBalanceAPI.csproj",
+      "packagesPath": "C:\\Users\\vinoch\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vinoch\\Downloads\\99XT\\AccountBalanceAPI\\AccountBalanceAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/vinoch/.config/NuGet/NuGet.Config"
+        "C:\\Users\\vinoch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "http://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -11543,16 +11545,16 @@
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.1.1"
+            "version": "[2.1.1, )",
+            "autoReferenced": true
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "2.1.2"
+            "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
-            "version": "2.1.0",
+            "version": "[2.1.0, )",
             "autoReferenced": true
           }
         },
